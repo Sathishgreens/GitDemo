@@ -11,6 +11,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Wait;
 import org.testng.annotations.Test;
 
+import io.opentelemetry.exporter.logging.SystemOutLogRecordExporter;
+
 public class Sample extends BaseClass {
 	// svg tags
 	@Test
@@ -29,7 +31,7 @@ public class Sample extends BaseClass {
 		System.out.println(elements);
 		Actions actions = new Actions(driver);
 		
-
+		System.out.println("Git Cloning");
 		for (WebElement webElement : elements) {
 			actions.moveToElement(webElement).perform();
 			String text = driver.findElement
